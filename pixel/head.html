@@ -1,11 +1,22 @@
 <script>
-  (function() {
-    var appId = "{{settings.gtmId}}";
-    if (!appId) {
-      console.error('Warning: No APP NAME ID is defined. Please configure it in the apps admin.');
-      return
-    }
+  // (function() {
+  //   var appId = "{{settings.gtmId}}";
+  //   if (!appId) {
+  //     console.error('Warning: No APP NAME ID is defined. Please configure it in the apps admin.');
+  //     return
+  //   }
 
+ const dfLayerOptions = {
+    installationId: '2c4326bb-5e30-45c4-b3a8-a0da0908d736',
+     zone: 'us1'
+   };
+   (function (l, a, y, e, r, s) {
+     r = l.createElement(a); r.onload = e; r.async = 1; r.src = y;
+     s = l.getElementsByTagName(a)[0]; s.parentNode.insertBefore(r, s);
+   })(document, 'script', 'https://cdn.doofinder.com/livelayer/1/js/loader.min.js', function () {
+     doofinderLoader.load(dfLayerOptions);
+  });
+ 
     // Add script here
-  })()
+  // })()
 </script>
