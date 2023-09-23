@@ -18,32 +18,6 @@
   });
 console.log(`Esto es una prueba....Doofinder`)
 // URL base
-const baseUrl = 'https://titan.com.pa/whatsapp'
-//'https://titan.com.pa/whatsapp';
-// Obtener los valores actuales del navegador
-const currentURL = window.location.href;
-const pageTitle = document.title;
-// Crear los parámetros UTM
-const utmParams = {
-  utm_source: currentURL,
-  utm_medium: 'boton_whatsapp',
-  utm_campaign: 'leads_ecommerce',
-  utm_term: pageTitle,
-  utm_content: pageTitle, // utm_content con el mismo valor que utm_term por el momento
-};
-// Construir la cadena de consulta con los parámetros UTM
-const queryString = Object.entries(utmParams)
-  .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-  .join('&');
-// Construir la URL final con los parámetros UTM
-const finalURL = `${baseUrl}?${queryString}`;
-// Modificar el atributo href del elemento <a> con la clase titan-home-0-x-whatsappLink
-const whatsappLink = document.querySelector('a.titan-home-0-x-whatsappLink');
-console.log(whatsappLink,`Holaaaaa`);
-if (whatsappLink) {
-  whatsappLink.href = finalURL;
-}
 
-    // Add script here
-  // })()
+
 </script>

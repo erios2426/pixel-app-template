@@ -1,0 +1,40 @@
+<script>
+
+// URL base
+const baseUrl = 'https://titan.com.pa/whatsapp';
+
+// Obtener los valores actuales del navegador
+const currentURL = window.location.href;
+const pageTitle = document.title;
+
+// Definimos el selector del href de whatsapp
+ const whatsappHref = 'titan-home-0-x-whatsappLink, a';
+
+// Crear los parámetros UTM
+const utmParams = {
+  utm_source: currentURL,
+  utm_medium: 'boton_whatsapp',
+  utm_campaign: 'leads_ecommerce',
+  utm_term: pageTitle,
+  utm_content: pageTitle, // utm_content con el mismo valor que utm_term por el momento
+};
+
+// Construir la cadena de consulta con los parámetros UTM
+const queryString = Object.entries(utmParams)
+  .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+  .join('&');
+
+// Construir la URL final con los parámetros UTM
+const finalURL = `${baseUrl}?${queryString}`;
+
+// Modificar el atributo href del elemento <a> con el valor de whatsappHref
+let whatsappLink = document.querySelector(whatsappHref);
+
+// Si encontramos el selector modificamos el elemento
+console.log(`Url.....`,document.querySelector(whatsappHref).getAttribute("href"))
+
+  whatsappLink.getAttribute("href")
+   whatsappLink.setAttribute("href",finalURL);
+   console.log(`Url2.....`,document.querySelector(whatsappHref).getAttribute("href"))
+//console.log(whatsappLink.getAttribute("href"),'XXX')
+</script>
